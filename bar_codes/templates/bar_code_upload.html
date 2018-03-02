@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        <link rel="stylesheet" href="">
+
+    </head>
+    <body>
+       <form action="{% url 'bar_codes:csv' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+            <input type="file" name="file" />
+            <input type="submit" value="Upload" />
+
+        </form>
+    </body>
+</html>

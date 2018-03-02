@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block section %}
+
+<section>
+    <div class="row">
+        <div class="col s12 m8 l6"> <!-- Note that "m8 l9" was added -->
+            <form class="col s12" method="post">{% csrf_token %}
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{form.code}}
+                        <label for="{{form.code.auto_id}}" data-error="wrong" data-success="right">{{form.code.label}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{form.name}}
+                        <label for="{{form.name.auto_id}}" data-error="wrong" data-success="right">{{form.name.label}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{form.dependence}}
+                        <label for="{{form.dependence.auto_id}}" data-error="wrong" data-success="right">{{form.dependence.label}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{form.headquarters}}
+                        <label for="{{form.headquarters.auto_id}}" data-error="wrong" data-success="right">{{form.headquarters.label}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12  ">
+                        <input type="submit" class="waves-effect waves-light red darken-1 btn " value="Generated"/>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+<script>
+
+</script>
+{% endblock section %}
